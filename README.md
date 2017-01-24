@@ -2,7 +2,7 @@
 
 **BigNumFuck** is a dialect of the **brainfuck programming language**<sup>(1)</sup> that uses the same 8 simple commands (```+-<>[],.```) but works with numbers instead of ASCII characters. This simplifies the input/output of many programs without changing the basic language idioms that characterize **brainfuck**.
 
-I provide an unoptimized interpreter of **BigNumFuck** implemented as a lazy generator function writen in Python 2/3 compatible code. It is able to deal with non-negative integers of arbitrary size and it will dinamically adapt the length of the tape as soon as its right end is reached.
+I provide an unoptimized interpreter of **BigNumFuck** implemented as a lazy generator function writen in Python 2/3 compatible code. It is able to deal with non-negative integers of arbitrary size and it will dinamically adapt the length of the tape as soon as the right end is reached.
 
 ## Implementation Details:
 
