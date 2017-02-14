@@ -108,13 +108,11 @@ def BigNumFuck(PROGRAM, INPUT, DEBUG=False):                                   #
                                                                                #
 if __name__ == "__main__":                                                     #
                                                                                #
-                                                                               #
     # Simple aplication of the interpreter:                                    #
     print("\nPrints the first N Fibonacci numbers:")                           #
     PROGRAM = ",>>+<<[->.[->>+<<]>[-<+>>+<]>[-<+>]<<<]"                        #
     INPUT   = [10]                                                             #
     for n in BigNumFuck(PROGRAM, INPUT): print(n)                              #
-                                                                               #
                                                                                #
     # Storing the output in a list:                                            #     
     print("\nPrints 2**N in binary")                                           #
@@ -122,7 +120,6 @@ if __name__ == "__main__":                                                     #
     INPUT   = [4]                                                              #
     OUTPUT  = list(BigNumFuck(PROGRAM, INPUT))                                 #
     print("".join(str(bit) for bit in OUTPUT))                                 #
-                                                                               #
                                                                                #
     # Truncating an infinite stream of bits:                                   #
     print("\nPrints the infinite Thue-Morse Sequence")                         #
@@ -134,10 +131,9 @@ if __name__ == "__main__":                                                     #
         OUTPUT.append(str(bit))                                                #
     print("".join(OUTPUT)+'...')                                               #
                                                                                #
-                                                                               #
     # Chaining streams functional-programming-style:                           #
     from itertools import chain                                                #
-    print("\nPrints the first N odd numbers")                                  #    
+    print("\nPrints the first N odd numbers")                                  #
     COUNT  = "+.[+.]"                                                          #
     IF_ODD = ">>>+<,[[<+<+>>-]<[->[->-]>[<+>->]<+<<]>[-<<.>>]<<[-]>>,]"        #
     ODDS   = BigNumFuck(IF_ODD, BigNumFuck(COUNT, []))                         #
@@ -145,5 +141,11 @@ if __name__ == "__main__":                                                     #
     INPUT  = [4]                                                               #
     for n in BigNumFuck(TAKE_N, chain(INPUT, ODDS)): print(n)                  #
                                                                                #
+    # Sorting a sequence in decreasing order:                                  #
+    print("\nSorts a sequence")                                                #
+    SORT    = ">>,[>>,]<<[[-<+<]>[>[>>]<[.[-]<[[>>+<<-]<]>>]>]<<]"             #
+    REVERSE = ">,[>,]<[.<]"                                                    #
+    INPUT   = [16,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15]                         #
+    for n in BigNumFuck(REVERSE, BigNumFuck(SORT, INPUT)): print(n)            #
+                                                                               #
 ################################################################################
-
